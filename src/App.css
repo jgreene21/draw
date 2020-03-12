@@ -11,13 +11,19 @@
   font-weight: 800;
   font-family: 'Times New Roman', Times, serif;
 }
-canvas {
+canvasDraw {
   border: 1px solid black;
   width: 700px;
   height: 500px;
   background-color: whitesmoke;
 }
 
-h2 {
+h3 {
   color: whitesmoke
 }
+
+h1 {
+  color: whitesmoke
+}
+
+
