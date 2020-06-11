@@ -1,12 +1,22 @@
 import React from 'react';
-import { Grid, Image } from "semantic-ui-react";
+import { Grid, Image, Button } from "semantic-ui-react";
 import './App.css';
 import Timer from './Timer';
 import Canvas from './Canvas';
 import SandTimer from "./sandtimer.svg"
 
 
-function App() {
+class App extends React.Component {
+  state = { startTimer: false, };
+
+  toggleStartTimer = () => {
+    this.setState( state => {
+      return { startTimer: !state.startTimer, };
+    })
+  }
+
+  render(){
+    const { startTimer} = this.state
   return (
     <div className="App">
       <Grid centered style={{marginTop: "40px"}}>
@@ -21,13 +31,25 @@ function App() {
         </Grid.Column>
       </Grid>
       <hr />
-    <h3>Use the interactive canvas to draw your picture. But be quick.  Your 
+    <h3>Use the interactive canvas to draw your picture. But be quick. Your 
       <br/>friends only have one minute to guess what you're drawing!
     </h3>
-    <Timer/>
+    <h2>Ready! Set! Draw!</h2>
+    { this.state.startTimer && <Timer/> }
+    <Button style={style.button} onClick={this.toggleStartTimer}>
+      {startTimer ? 'Stop Game' : 'Start Game'}
+    </Button>
     <Canvas/>
     </div>
-  ); 
+    ); 
+  }
+};
+
+const style = {
+  button: {
+    backgroundColor: "#FFB6C1",
+    cursor: "pointer"
+  }
 }
 
 export default App;

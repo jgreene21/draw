@@ -31,7 +31,7 @@ class Timer extends React.Component {
     const { count } = this.state
     return (
       <div>
-        <h1>{count === 0 ? 'Game Over!' : `Ready! Set! Draw!`}
+        <h1>{count === 0 ? 'Game Over!' : ``}
         <br/> {count}</h1>
       </div>
     )

@@ -55,7 +55,8 @@ const style = {
     margin: "20px",
     borderRadius: "20px",
     height: "35px",
-    width: "70px"
+    width: "70px",
+    cursor: "pointer"
   }
 }
  export default Canvas
